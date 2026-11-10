@@ -29,7 +29,13 @@ defmodule WAservixTest do
     assert {:ok, %{"msgId" => 58213, "status" => "in_progress"}} =
              WAservix.send_text(client(), "+1555", "hi")
 
-    assert_received %{method: "POST", path: "/api/send-message", auth: "Bearer wpk_test", body: body}
+    assert_received %{
+      method: "POST",
+      path: "/api/send-message",
+      auth: "Bearer wpk_test",
+      body: body
+    }
+
     assert body == %{"to" => "+1555", "text" => "hi"}
   end
 
@@ -40,7 +46,9 @@ defmodule WAservixTest do
     assert_received %{body: %{"to" => "+1", "imageUrl" => "https://x/y.jpg"} = body}
     refute Map.has_key?(body, "text")
 
-    {:ok, _} = WAservix.send_document(c, "+1", "https://x/a.pdf", file_name: "a.pdf", caption: "c")
+    {:ok, _} =
+      WAservix.send_document(c, "+1", "https://x/a.pdf", file_name: "a.pdf", caption: "c")
+
     assert_received %{body: %{"fileName" => "a.pdf", "text" => "c"}}
 
     {:ok, _} = WAservix.send_location(c, "+1", -1.9441, 30.0619, name: "Shop")
