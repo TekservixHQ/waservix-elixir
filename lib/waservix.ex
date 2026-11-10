@@ -138,7 +138,7 @@ defmodule WAservix do
   def send_message(client, to, fields) when is_map(fields) do
     if to in [nil, ""] do
       raise ArgumentError,
-            ~s(send_message: "to" is required (international number or group JID))
+            "send_message: \"to\" is required (international number or group JID)"
     end
 
     body =
@@ -196,7 +196,7 @@ defmodule WAservix do
   @spec resend_message(t(), term()) :: result()
   def resend_message(client, id), do: request(client, :post, "/messages/#{esc(id)}/resend")
 
-  @doc ~s(Is this number on WhatsApp? Returns `{:ok, %{"exists" => true, "jid" => ...}}`.)
+  @doc "Is this number on WhatsApp? Returns `{:ok, %{\"exists\" => true, \"jid\" => ...}}`."
   @spec on_whatsapp(t(), String.t()) :: result()
   def on_whatsapp(client, phone), do: request(client, :get, "/on-whatsapp/#{esc(phone)}")
 
