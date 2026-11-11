@@ -1,7 +1,7 @@
 defmodule WAservix.MixProject do
   use Mix.Project
 
-  @version "1.0.0"
+  @version "1.0.1"
   @source_url "https://github.com/TekservixHQ/waservix-elixir"
 
   def project do
@@ -13,7 +13,7 @@ defmodule WAservix.MixProject do
       deps: deps(),
       name: "WAservix",
       description:
-        "Elixir client for the WAservix WhatsApp API Gateway: send WhatsApp text, media, locations and polls from your own number, with webhooks.",
+        "WAservix WhatsApp API Gateway: official Elixir client by Tekservix. Send WhatsApp messages, images and documents from your own number, with status tracking and webhooks.",
       source_url: @source_url,
       homepage_url: "https://tekservix.com/waservix/",
       package: package(),
