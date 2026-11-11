@@ -4,6 +4,8 @@
 [![Docs](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/waservix)
 [![tests](https://github.com/TekservixHQ/waservix-elixir/actions/workflows/tests.yml/badge.svg)](https://github.com/TekservixHQ/waservix-elixir/actions/workflows/tests.yml)
 
+**WAservix WhatsApp API Gateway** - official Elixir client: send WhatsApp messages from your own number. By Tekservix.
+
 Elixir client for the [WAservix WhatsApp API Gateway](https://tekservix.com/waservix/).
 
 WAservix links your own WhatsApp number by QR code (the same way WhatsApp Web does) and gives you a REST API to send text, images, video, audio, documents, locations, polls and more, with webhooks for incoming messages and status updates.
